@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+.esbuild/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Uploads and generated files
+backend/uploads/
+
+# Coverage
+coverage/
+
+# Misc
+*.local
+*.cache
+
+# Jupyter and notebook checkpoints
+.ipynb_checkpoints/
+
+# Frontend build
+frontend/.next/
+frontend/out/
+frontend/.cache/
+
+# IDE
+.idea/
+
+# Test output
+*.test-results.json
