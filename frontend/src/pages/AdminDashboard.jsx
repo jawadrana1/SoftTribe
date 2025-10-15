@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../apiBase";
 
 export default function AdminDashboard() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function AdminDashboard() {
         form.append(key, formData[key]);
       }
 
-      await axios.post("http://localhost:5000/api/portfolio", form, {
+  await axios.post(`${API_BASE_URL}/api/portfolio`, form, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

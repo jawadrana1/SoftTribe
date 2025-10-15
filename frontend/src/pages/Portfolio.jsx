@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../apiBase";
 
 export default function Portfolio() {
   const [projects, setProjects] = useState([]);
@@ -7,7 +8,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/portfolio");
+  const res = await axios.get(`${API_BASE_URL}/api/portfolio`);
         setProjects(res.data.data); // matches backend response
       } catch (err) {
         console.error("Error fetching portfolio:", err);
@@ -29,7 +30,7 @@ export default function Portfolio() {
               className="bg-gray-50 rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
             >
               <img
-                src={p.image ? `http://localhost:5000/${p.image}` : "/fallback.jpg"}
+                src={p.image ? `${API_BASE_URL}/${p.image}` : "/fallback.jpg"}
                 alt={p.title}
                 className="w-full h-48 object-cover hover:scale-105 transition duration-300"
               />

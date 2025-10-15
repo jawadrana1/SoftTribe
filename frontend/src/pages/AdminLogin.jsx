@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../apiBase";
 
 export default function AdminLogin({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ export default function AdminLogin({ onLogin }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/admin", {
+  const res = await axios.post(`${API_BASE_URL}/api/admin/admin`, {
         email,
         password,
       });
