@@ -10,7 +10,7 @@ export default function AdminLogin({ onLogin }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-  const res = await axios.post(`${API_BASE_URL}/api/admin/admin`, {
+  const res = await axios.post(`${API_BASE_URL}/api/admin`, {
         email,
         password,
       });
